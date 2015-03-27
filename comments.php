@@ -69,7 +69,7 @@ echo $commentClass;
             </div>
             <?php endif; ?>
             <div>
-                <textarea name="text" id="textarea" class="textarea" placeholder="<?php _e('试试 Ctrl/Cmd+Enter 提交'); ?>" onkeydown="if((event.metaKey&&event.keyCode==13)||(event.ctrlKey&&event.keyCode==13)){document.getElementById('submit').click();return false};" required ><?php $this->remember('text'); ?></textarea>
+                <textarea name="text" id="textarea" class="textarea" placeholder="<?php _e('试试用 Ctrl/Cmd+Enter 提交吧？'); ?>" onkeydown="if((event.metaKey&&event.keyCode==13)||(event.ctrlKey&&event.keyCode==13)){document.getElementById('submit').click();return false};" required ><?php $this->remember('text'); ?></textarea>
             </div>
             <div>
                 <button type="submit" id="submit"><?php _e('提交评论'); ?></button>
