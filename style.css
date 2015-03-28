@@ -42,10 +42,10 @@ a:active {
     text-align: center;
 }
 @font-face {
-    font-family: 'brdev';
+    font-family: 'leisure';
 
-    src: url('fonts/brdev.eot'); /* For IE9 这句我也想删掉的 */
-    src: url('fonts/brdev.woff') format('woff'); /* 现代浏览器 */
+    src: url('fonts/leisure.eot'); /* For IE9 这句我也想删掉的 */
+    src: url('fonts/leisure.woff') format('woff'); /* 现代浏览器 */
 }
 
 /* ==========================================================================
@@ -224,7 +224,7 @@ a.current {
     float: right;
 }
 .rss:before {
-    font-family: 'brdev';
+    font-family: 'leisure';
 
     content: '\ea95';
 
@@ -286,7 +286,7 @@ a.current {
     font-weight: 700;
 }
 .social {
-    font-family: 'brdev';
+    font-family: 'leisure';
     font-size: 3rem;
 
     margin: 2.5rem 0;
@@ -337,7 +337,7 @@ a.current {
     background: #fff;
 }
 .search:after {
-    font-family: 'brdev';
+    font-family: 'leisure';
 
     position: relative;
     top: -1.7rem;
