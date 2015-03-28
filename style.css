@@ -33,12 +33,10 @@ a:active {
     text-decoration: none;
 }
 .clearfix:after {
-    display: block;
+    display: table;
     clear: both;
 
-    height: 0;
-
-    content: '\200b';
+    content: '';
 }
 .center {
     text-align: center;
