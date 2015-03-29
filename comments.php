@@ -65,7 +65,7 @@ echo $commentClass;
             <p><?php _e('已登入: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
             <?php else: ?>
             <div>
-                <input type="text" name="author" maxlength="10" id="author" class="text" placeholder="<?php _e('昵称 *'); ?>" value="<?php $this->remember('author'); ?>" required /><input type="email" name="mail" id="mail" class="text" placeholder="<?php _e('邮箱 *'); ?>" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> /><input type="url" name="url" id="url" class="text" placeholder="<?php _e('网址'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
+                <input type="text" name="author" maxlength="12" id="author" class="text" placeholder="<?php _e('昵称 *'); ?>" value="<?php $this->remember('author'); ?>" required /><input type="email" name="mail" id="mail" class="text" placeholder="<?php _e('邮箱 *'); ?>" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> /><input type="url" name="url" id="url" class="text" placeholder="<?php _e('网址'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
             </div>
             <?php endif; ?>
             <div>
