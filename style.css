@@ -2,7 +2,7 @@
 /**
  * @theme:   leisure
  * @author:  banri
- * @update:  20150327
+ * @update:  20150401
  */
 
 /* --------------------------------------------------------------------------
@@ -152,6 +152,9 @@ a.current {
     border-radius: .25rem;
     background: #f8f8f8;
 }
+.post-content pre {
+    word-wrap: normal;
+}
 .post-content img {
     display: block;
 
@@ -250,7 +253,6 @@ a.current {
 .btm-search {
     display: none;
 }
-
 
 /* ==========================================================================
    #sidebar
