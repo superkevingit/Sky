@@ -2,7 +2,7 @@
 /**
  * @theme:   leisure
  * @author:  banri
- * @update:  20150401
+ * @update:  20150408
  */
 
 /* --------------------------------------------------------------------------
@@ -159,11 +159,11 @@ a.current {
     background: #ccc;
 }
 
-.post-content code {
+.post-content p > code {
     margin: 0 .25rem;
 }
 
-.post-content code,
+.post-content p > code,
 .post-content pre {
     line-height: 1.25rem;
 
@@ -567,6 +567,60 @@ a.current {
 }
 
 /* ==========================================================================
+   @page fav
+   ========================================================================== */
+.no-line {
+    border: 0 none;
+}
+
+.links {
+    padding: 0;
+}
+
+.links li {
+    list-style-type: none;
+}
+
+.link-des {
+    overflow: hidden;
+
+    padding: .25rem;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fav-list li {
+    padding: .25rem 0;
+
+    border-bottom: 1px dotted #e0e0e0;
+}
+
+.fav-list a {
+    float: right;
+}
+
+.site-list li {
+    float: left;
+
+    width: 18%;
+    margin: .5rem 1%;
+}
+
+.site-list a {
+    display: block;
+    overflow: hidden;
+
+    height: 2rem;
+
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    border-radius: 2rem;
+}
+
+/* ==========================================================================
    media queries
    ========================================================================== */
 @media only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -624,5 +678,10 @@ a.current {
 
     .comment-parent > .comment-children {
         padding-left: 0;
+    }
+
+    .site-list li {
+        width: 46%;
+        margin: .5rem 2%;
     }
 }
