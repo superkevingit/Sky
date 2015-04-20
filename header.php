@@ -24,7 +24,12 @@
     <?php $this->header(); ?>
 </head>
 <body>
-    <div id="main">
+    <div class="main">
+        <div id="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <header id="header">
             <div class="wrapper">
                 <nav class="nav-menu" role="navigation">
