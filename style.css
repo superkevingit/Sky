@@ -163,11 +163,11 @@ a.current {
     background: #ccc;
 }
 
-.post-content > code {
+.post-content p > code {
     margin: 0 .25rem;
 }
 
-.post-content > code,
+.post-content p > code,
 .post-content pre {
     line-height: 1.25rem;
 
