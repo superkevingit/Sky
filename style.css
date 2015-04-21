@@ -104,7 +104,7 @@ a:active {
     border-bottom: 2px solid #333244;
 }
 
-a.current {
+#nav a.current {
     color: #fff;
     background: #333244;
 }
