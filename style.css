@@ -163,11 +163,11 @@ a:active {
     background: #ccc;
 }
 
-.post-content p > code {
+.post-content code {
     margin: 0 .25rem;
 }
 
-.post-content p > code,
+.post-content code,
 .post-content pre {
     line-height: 1.25rem;
 
@@ -179,6 +179,13 @@ a:active {
     border: 1px solid #eaeaea;
     border-radius: .25rem;
     background: #f8f8f8;
+}
+
+.post-content pre code {
+    margin: 0;
+    padding: 0;
+
+    border: 0 none;
 }
 
 .post-content img {
