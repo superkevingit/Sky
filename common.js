@@ -1,14 +1,3 @@
-function toggle(e) {
-    var _arguments = arguments;
-
-    (function(count) {
-        e.addEventListener("click", function() {
-            count >= _arguments.length && (count = 1);
-            _arguments[count++ % _arguments.length].call(e);
-        }, false)
-    })(1);
-}
-
 function sbar() {
     var sbar = document.getElementsByName("s");
 
@@ -37,16 +26,33 @@ function comment() {
     }
 }
 
+function toggle(e) {
+    var _arguments = arguments;
+
+    (function(count) {
+        e.addEventListener("click", function() {
+            count >= _arguments.length && (count = 1);
+            _arguments[count++ % _arguments.length].call(e);
+        }, false)
+    })(1);
+}
+
+function menu(e) {
+    var link = e.getElementsByTagName("a"),
+        mh = link.length * 51;
+    e.style.height = mh + "px";
+}
+
 function show() {
     var btn = document.getElementById("toggle"),
-        nav = document.getElementById("header");
+        nav = document.getElementById("nav");
 
     toggle(btn, function() {
         btn.className += "show-btn";
-        nav.className += "show-menu";
+        menu(nav);
     }, function() {
         btn.className = "";
-        nav.className = "";
+        nav.style.height = 0;
     });
 }
 

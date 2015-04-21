@@ -90,7 +90,7 @@ a:active {
     background: #fff;
 }
 
-.nav-menu a {
+#nav a {
     display: inline-block;
 
     padding: 0 .8rem;
@@ -98,7 +98,7 @@ a:active {
     color: #666;
 }
 
-.nav-menu a:hover {
+#nav a:hover {
     height: 58px;
 
     border-bottom: 2px solid #333244;
@@ -653,12 +653,13 @@ a.current {
     }
 
     #toggle {
-        position: absolute;
+        position: relative;
         z-index: 10000;
         top: 10px;
         right: 10px;
 
         display: block;
+        float: right;
 
         box-sizing: border-box;
         width: 30px;
@@ -667,7 +668,7 @@ a.current {
     }
 
     #toggle.show-btn {
-        background: rgba(255,255,255,.3);
+        background: #eee;
     }
 
     #toggle span {
@@ -682,6 +683,14 @@ a.current {
     #header {
         line-height: 50px;
 
+        position: relative;
+
+        height: auto;
+
+        border: 0 none;
+    }
+
+    #nav {
         overflow: hidden;
 
         height: 0;
@@ -689,18 +698,10 @@ a.current {
         transition: height .3s;
         transform: translate3d(0,0,0);
 
-        border: 0 none;
-    }
-
-    #header.show-menu {
-        height: 255px;
-    }
-
-    .nav-menu {
         background: #333244;
     }
 
-    .nav-menu a {
+    #nav a {
         display: block;
 
         text-align: center;
@@ -709,7 +710,7 @@ a.current {
         border-top: 1px dotted #555;
     }
 
-    .nav-menu a:hover {
+    #nav a:hover {
         height: 50px;
 
         border-bottom: 0 none;
