@@ -44,6 +44,7 @@ function toggle(e) {
 function menu(e) {
     var link = e.getElementsByTagName("a"),
         mh = link.length * 51;
+
     e.style.height = mh + "px";
 }
 
