@@ -3,11 +3,15 @@ function sbar() {
 
     for (var i = 0; i < sbar.length; i++) {
         sbar[i].addEventListener("focus", function() {
-            this.value = "";
+            if (this.value == "\u641c\u7d22") {
+                this.value = "";
+            }
         }, false);
 
         sbar[i].addEventListener("blur", function() {
-            this.value = "\u641c\u7d22";
+            if (this.value == "") {
+                this.value = "\u641c\u7d22";
+            }
         }, false);
     }
 }
