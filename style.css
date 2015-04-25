@@ -163,17 +163,13 @@ a:active {
     background: #ccc;
 }
 
+.post-content pre,
 .post-content code {
-    margin: 0 .25rem;
-}
-
-.post-content code,
-.post-content pre {
     line-height: 1.25rem;
 
     padding: .25rem;
 
-    word-wrap: normal;
+    word-break: keep-all;
 
     color: #c7254e;
     border: 1px solid #eaeaea;
@@ -181,11 +177,20 @@ a:active {
     background: #f8f8f8;
 }
 
+.post-content code {
+    margin: 0 .25rem;
+}
+
 .post-content pre code {
     margin: 0;
     padding: 0;
 
     border: 0 none;
+}
+
+.post-content pre,
+.post-content pre code {
+    word-wrap: normal;
 }
 
 .post-content img {
@@ -740,6 +745,10 @@ a:active {
         height: 50px;
 
         border-bottom: 0 none;
+    }
+
+    .post-content p > code {
+        word-break: break-all;
     }
 
     .container {
