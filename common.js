@@ -16,16 +16,22 @@ function sbar() {
     }
 }
 
-function comment() {
-    var area = document.getElementById('textarea'),
+function key() {
+    var event = window.event || arguments.callee.caller.arguments[0],
         sub = document.getElementById('submit');
 
-    if (area && sub) {
+    if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
+        sub.click();
+        event.preventDefault();
+    }
+}
+
+function comment() {
+    var area = document.getElementById('textarea');
+
+    if (area) {
         area.addEventListener('keydown', function() {
-            if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
-                sub.click();
-                return false;
-            }
+            key();
         }, false);
     }
 }
@@ -53,7 +59,7 @@ function show() {
         nav = document.getElementById('nav');
 
     toggle(btn, function() {
-        btn.className += 'show-btn';
+        btn.className = 'show-btn';
         menu(nav);
     }, function() {
         btn.className = '';
