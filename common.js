@@ -22,7 +22,11 @@ function key() {
 
     if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
         sub.click();
-        event.preventDefault();
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
     }
 }
 
