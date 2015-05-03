@@ -15,7 +15,7 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}artic
    主题仍在施工中，如有BUG欢迎反馈。
    ========================================================================== */
 html {
-    font-size: 87.5%;
+    font-size: 14px;
 }
 
 body {
@@ -648,7 +648,14 @@ a:active {
        only screen and (min-resolution: 2dppx),
        only screen and (min-width: 1900px) {
     html {
-        font-size: 100%;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2) {
+    .logo {
+        background-image: url(//cdn.brdev.org/avatar.jpg!2x);
+        background-size: cover;
     }
 }
 
