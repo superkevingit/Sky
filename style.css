@@ -2,7 +2,7 @@
 /**
  * @theme:   leisure
  * @author:  banri
- * @update:  20150421
+ * @update:  20150503
  */
 
 /* --------------------------------------------------------------------------
@@ -166,6 +166,8 @@ a:active {
 .post-content pre,
 .post-content code {
     line-height: 1.25rem;
+
+    overflow-y: hidden;
 
     padding: .25rem;
 

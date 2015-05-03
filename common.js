@@ -1,18 +1,39 @@
+function change(e, val) {
+    e.addEventListener('focus', function() {
+        if (this.value === val) {
+            this.value = '';
+        }
+    }, false);
+
+    e.addEventListener('blur', function() {
+        if (this.value === '') {
+            this.value = val;
+        }
+    }, false);
+}
+
 function sbar() {
     var sbar = document.getElementsByName('s');
 
     for (var i = 0; i < sbar.length; i++) {
-        sbar[i].addEventListener('focus', function() {
-            if (this.value == '\u641c\u7d22') {
-                this.value = '';
-            }
-        }, false);
+        change(sbar[i], '搜索');
+    }
+}
 
-        sbar[i].addEventListener('blur', function() {
-            if (this.value == '') {
-                this.value = '\u641c\u7d22';
+function ie() {
+    var form = document.getElementById('comment-form');
+
+    if (form) {
+        var input = form.getElementsByTagName('input'),
+            sup = "placeholder" in input[0];
+
+        if (!sup) {
+            for (var i = 0; i < input.length; i++) {
+                var pla = input[i].getAttribute('placeholder');
+                input[i].value = pla;
+                change(input[i], pla);
             }
-        }, false);
+        }
     }
 }
 
@@ -87,3 +108,4 @@ function addLoadEvent(func) {
 addLoadEvent(sbar());
 addLoadEvent(comment());
 addLoadEvent(show());
+addLoadEvent(ie());
