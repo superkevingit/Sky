@@ -2,7 +2,7 @@
 /**
  * @theme:   leisure
  * @author:  banri
- * @update:  20150503
+ * @update:  20150504
  */
 
 /* --------------------------------------------------------------------------
@@ -480,7 +480,7 @@ a:active {
 .comment-author:hover,
 .comment-author:hover a,
 .comment-author a:hover {
-    color: #fff!important;
+    color: #fff !important;
     background: #ccc;
 }
 
@@ -529,7 +529,7 @@ a:active {
 }
 
 .current a {
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .response {
@@ -557,7 +557,8 @@ a:active {
     border-color: #aaa;
 }
 
-.text {
+.text,
+#submit {
     width: 33%;
 }
 
@@ -573,8 +574,6 @@ a:active {
 }
 
 #submit {
-    width: 100%;
-
     color: #999;
     background: #eee;
 }
@@ -668,7 +667,8 @@ a:active {
 
     .main,
     .text,
-    .wrapper {
+    .wrapper,
+    #submit {
         width: 100%;
         max-width: 100%;
     }
