@@ -21,13 +21,11 @@ function sbar() {
 }
 
 function ie() {
-    var form = document.getElementById('comment-form');
+    var form = document.getElementById('comment-form'),
+        input = [];
 
-    if (form) {
-        var input = form.getElementsByTagName('input'),
-            sup = "placeholder" in input[0];
-
-        if (!sup) {
+    if ((input = form.getElementsByTagName('input')) && input[0]) {
+        if (!('placeholder' in input[0])) {
             for (var i = 0; i < input.length; i++) {
                 var pla = input[i].getAttribute('placeholder');
                 input[i].value = pla;
