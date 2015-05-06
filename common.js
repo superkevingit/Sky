@@ -85,8 +85,8 @@ function show() {
         btn.className = 'show-btn';
         menu(nav);
     }, function() {
-        btn.className = '';
-        nav.style.height = 0;
+        btn.className = null;
+        nav.style.height = null;
     });
 }
 
