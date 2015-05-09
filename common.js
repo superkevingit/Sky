@@ -21,13 +21,15 @@ function sbar() {
 }
 
 function ie() {
-    var form = document.getElementById('comment-form'),
-        input = [];
+    var form = document.getElementById('comment-form');
 
-    if ((input = form.getElementsByTagName('input')) && input[0]) {
-        if (!('placeholder' in input[0])) {
+    if (form) {
+        var input = form.getElementsByTagName('input');
+
+        if (input[0] && !('placeholder' in input[0])) {
             for (var i = 0; i < input.length; i++) {
                 var pla = input[i].getAttribute('placeholder');
+
                 input[i].value = pla;
                 change(input[i], pla);
             }
@@ -85,8 +87,8 @@ function show() {
         btn.className = 'show-btn';
         menu(nav);
     }, function() {
-        btn.className = null;
-        nav.style.height = null;
+        btn.className = '';
+        nav.style.height = 0;
     });
 }
 
