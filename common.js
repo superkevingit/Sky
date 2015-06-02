@@ -1,22 +1,56 @@
-function change(e, val) {
-    e.addEventListener('focus', function() {
-        if (this.value === val) {
-            this.value = '';
-        }
-    }, false);
+window.onload = function() {
+    sbar();
+    ie();
+    comment();
+    menu();
+}
 
-    e.addEventListener('blur', function() {
-        if (this.value === '') {
-            this.value = val;
+var br = {
+    //添加事件
+    addEL: function(e, type, fun) {
+        if (e.addEventListener) {
+            e.addEventListener(type, fun, false);
+        } else if (e.attachEvent) {
+            e.attachEvent('on' + type, fun);
+        } else {
+            e['on' + type] = fun;
         }
-    }, false);
+    },
+
+    //设置输入框属性
+    setVal: function(e, val) {
+        e.value = val;
+        br.addEL(e, 'focus', function() {
+            if (this.value === val) {
+                this.value = '';
+            }
+        })
+        br.addEL(e, 'blur', function() {
+            if (this.value === '') {
+                this.value = val;
+            }
+        })
+    },
+
+    //快捷键提交
+    prsKey: function(e) {
+        var sub = document.getElementById('submit');
+
+        br.addEL(e, 'keydown', function(event) {
+            if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
+                sub.click();
+            }
+        })
+    }
 }
 
 function sbar() {
-    var sbar = document.getElementsByName('s');
+    var sbar = document.getElementsByName('s'),
+        len = sbar.length,
+        i;
 
-    for (var i = 0; i < sbar.length; i++) {
-        change(sbar[i], '搜索');
+    for (i = 0; i < len; i++) {
+        br.setVal(sbar[i], '搜索');
     }
 }
 
@@ -24,29 +58,16 @@ function ie() {
     var form = document.getElementById('comment-form');
 
     if (form) {
-        var input = form.getElementsByTagName('input');
+        var input = form.getElementsByTagName('input'),
+            len = input.length,
+            i;
 
-        if (input[0] && !('placeholder' in input[0])) {
-            for (var i = 0; i < input.length; i++) {
+        if (len > 0 && !('placeholder' in input[0])) {
+            for (i = 0; i < len; i++) {
                 var pla = input[i].getAttribute('placeholder');
 
-                input[i].value = pla;
-                change(input[i], pla);
+                br.setVal(input[i], pla);
             }
-        }
-    }
-}
-
-function key() {
-    var event = window.event || arguments.callee.caller.arguments[0],
-        sub = document.getElementById('submit');
-
-    if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
-        sub.click();
-        if (event.preventDefault) {
-            event.preventDefault();
-        } else {
-            event.returnValue = false;
         }
     }
 }
@@ -55,57 +76,22 @@ function comment() {
     var area = document.getElementById('textarea');
 
     if (area) {
-        area.addEventListener('keydown', function() {
-            key();
-        }, false);
+        br.prsKey(area);
     }
 }
 
-function toggle(e) {
-    var _arguments = arguments;
-
-    (function(count) {
-        e.addEventListener('click', function() {
-            count >= _arguments.length && (count = 1);
-            _arguments[count++ % _arguments.length].call(e);
-        }, false)
-    })(1);
-}
-
-function menu(e) {
-    var link = e.getElementsByTagName('a'),
-        mh = link.length * 51;
-
-    e.style.height = mh + 'px';
-}
-
-function show() {
+function menu() {
     var btn = document.getElementById('toggle'),
-        nav = document.getElementById('nav');
+        nav = document.getElementById('nav'),
+        hei = nav.getElementsByTagName('a').length * 51;
 
-    toggle(btn, function() {
-        btn.className = 'show-btn';
-        menu(nav);
-    }, function() {
-        btn.className = '';
-        nav.style.height = 0;
-    });
-}
-
-function addLoadEvent(func) {
-    var oldonload = window.onload;
-
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            oldonload();
-            func();
+    br.addEL(btn, 'click', function() {
+        if (btn.className === 'show-btn') {
+            btn.className = null;
+            nav.style.height = null;
+        } else {
+            btn.className = 'show-btn';
+            nav.style.height = hei + 'px';
         }
-    }
+    })
 }
-
-addLoadEvent(sbar());
-addLoadEvent(comment());
-addLoadEvent(show());
-addLoadEvent(ie());
