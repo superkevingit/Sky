@@ -1,10 +1,3 @@
-window.onload = function() {
-    sbar();
-    ie();
-    comment();
-    menu();
-}
-
 var br = {
     //添加事件
     addEL: function(e, type, fun) {
@@ -17,7 +10,7 @@ var br = {
         }
     },
 
-    //设置输入框属性
+    //设置输入框值
     setVal: function(e, val) {
         e.value = val;
         br.addEL(e, 'focus', function() {
@@ -32,7 +25,7 @@ var br = {
         })
     },
 
-    //快捷键提交
+    //快捷键提交表单
     prsKey: function(e) {
         var sub = document.getElementById('submit');
 
@@ -44,7 +37,8 @@ var br = {
     }
 }
 
-function sbar() {
+//搜索框提示文字
+! function() {
     var sbar = document.getElementsByName('s'),
         len = sbar.length,
         i;
@@ -52,9 +46,10 @@ function sbar() {
     for (i = 0; i < len; i++) {
         br.setVal(sbar[i], '搜索');
     }
-}
+}()
 
-function ie() {
+//表单相关
+! function() {
     var form = document.getElementById('comment-form');
 
     if (form) {
@@ -69,18 +64,12 @@ function ie() {
                 br.setVal(input[i], pla);
             }
         }
+        br.prsKey(form);
     }
-}
+}()
 
-function comment() {
-    var area = document.getElementById('textarea');
-
-    if (area) {
-        br.prsKey(area);
-    }
-}
-
-function menu() {
+//切换菜单
+! function() {
     var btn = document.getElementById('toggle'),
         nav = document.getElementById('nav'),
         hei = nav.getElementsByTagName('a').length * 51;
@@ -94,4 +83,4 @@ function menu() {
             nav.style.height = hei + 'px';
         }
     })
-}
+}()
