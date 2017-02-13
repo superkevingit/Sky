@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="55498b7b-fd2b-43bf-bfd3-fd41774ab887" name="vultr" url="http://45.76.111.190">
+        <fileTransfer host="45.76.111.190" port="22" accessType="SFTP" password="dfe3dfcbdfc7dfe3dfd8dfc5dfc4dfc7dfcbdfc4df93df9c" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
