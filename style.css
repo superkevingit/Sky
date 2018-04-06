@@ -343,10 +343,10 @@ a:active {
     margin: .5rem auto;
 
     border-radius: 50%;
-    background-image: url(//cdn.brdev.org/avatar.jpg!1x);
+    background-image: url(logo.png);
     background-image: -webkit-image-set(
-    url(//cdn.brdev.org/avatar.jpg!1x) 1x,
-    url(//cdn.brdev.org/avatar.jpg!2x) 2x);
+    url(logo.png) 1x);
+    background-size:100% 100%;
 }
 
 .name {
@@ -655,7 +655,7 @@ a:active {
 
 @media only screen and (min--moz-device-pixel-ratio: 2) {
     .logo {
-        background-image: url(//cdn.brdev.org/avatar.jpg!2x);
+        background-image: url(logo.png);
         background-size: cover;
     }
 }

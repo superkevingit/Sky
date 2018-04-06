@@ -18,8 +18,8 @@
     <meta http-equiv="Cache-Control" content="no-transform">
 
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
-    <link rel="shortcut icon" href="//cdn.brdev.org/favicon.ico">
-    <link rel="apple-touch-icon" href="//cdn.brdev.org/icon.png">
+    <link rel="shortcut icon" href="<?php $this->options->themeUrl('logo.ico'); ?>">
+    <link rel="apple-touch-icon" href="<?php $this->options->themeUrl('logo.ico'); ?>">
 
     <?php $this->header(); ?>
 </head>
