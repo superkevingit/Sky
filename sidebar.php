@@ -2,13 +2,11 @@
     <div class="sidebar">
         <div class="widget center">
             <i class="logo"></i>
-            <span class="name">banri</span>
+            <span class="name">Sky</span>
         </div>
         <div class="social">
             <div class="center">
-                <a href="https://github.com/banrikun" target="_blank" title="GitHub">&#60081;</a>
-                <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=fhhGSEg_CBcOUA8PUB0REw" target="_blank" title="Mail">&#60038;</a>
-                <a href="http://weibo.com/banrikun" target="_blank" title="Weibo">&#58880;</a>
+                <a href="https://github.com/superkevingit" target="_blank" title="GitHub">&#60081;</a>
             </div>
         </div>
         <div class="widget">
@@ -26,11 +24,6 @@
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?>: <?php $comments->excerpt(30, '...'); ?></a></li>
             <?php endwhile; ?>
             </ul>
-        </div>
-        <div class="widget">
-            <form class="search" method="post" action="/" role="search">
-                <input type="search" name="s" autocomplete="off">
-            </form>
         </div>
     </div>
 

@@ -34,7 +34,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div class="post-page clearfix">
         <?php if ($this->_currentPage == 1): ?>
             <?php $this->pageLink('下一页','next'); ?>
-            <a class="rss" href="<?php $this->options->feedUrl(); ?>" title="订阅RSS"></a>
         <?php else: ?>
             <?php $this->pageLink('下一页','next'); ?>
             <?php $this->pageLink('上一页','prev'); ?>
